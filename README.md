@@ -22,11 +22,14 @@ npm install --save svelte-app-router
 Routes should be specified as on object where each key is a route, and each value is an array containing a component as first element and optionally an data-object as second element.
 
 ```html
+<!-- Links. These can be here or anywhere else in your app. -->
+<a href="#/home">Home</a>
+<a href="#/contact">Contact</a>
+<a href="#/notfound">Does not exist</a>
+
+<!-- The Router content between Router start and end tag will be shown incase 
+     of navigation to a non-existing route.-->
 <Router routes="{{ routes }}">
-  <!-- 
-    Content between Router start and end tag will be shown incase of navigation
-    to a non-existing route.
-   -->
   <div class="error">
     Houston, we have a problem! This page was not found.
   </div>
