@@ -28,7 +28,7 @@ Routes should be specified as on object where each key is a route, and each valu
 <a href="#/notfound">Does not exist</a>
 
 <!-- The Router component. Content between Router start and end tag will be 
-     shown incase of navigation to a non-existing route.-->
+     shown in case of navigation to a non-existing route.-->
 <Router routes="{{ routes }}">
   <div class="error">
     Houston, we have a problem! This page was not found.
