@@ -9,7 +9,7 @@ A simple router for your Single Page Application.
 * Hash based routing
 * Data can be set for components when declaring routes
 * Querystring parameters are passed to component when mounted (optional)
-* No special <link> components needed
+* No special `<link>` components needed, just use standard `<a>`.
 
 ## Installation
 
