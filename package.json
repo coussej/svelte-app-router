@@ -1,0 +1,33 @@
+{
+  "name": "svelte-app-router",
+  "version": "0.1.0",
+  "description": "Simple SPA router made with Svelte.",
+  "main": "dist/svelte-app-router.js",
+  "scripts": {
+    "build": "rollup -c",
+    "example": "rollup -c -i src/example/Example.html -o example/index.js -f iife -n Example && http-server example",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coussej/svelte-app-router.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "svelte",
+    "router"
+  ],
+  "author": "Jeroen Coussement",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coussej/svelte-app-router/issues"
+  },
+  "homepage": "https://github.com/coussej/ssvelte-app-router#readme",
+  "devDependencies": {
+    "rollup": "^0.50.0",
+    "rollup-plugin-svelte": "^3.1.0",
+    "standard": "^10.0.3"
+  }
+}

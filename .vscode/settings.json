@@ -1,0 +1,12 @@
+{
+  "javascript.validate.enable": false,
+  "standard.autoFixOnSave": true,
+  "standard.enable": true,
+  "standard.options": {
+      "plugins": ["html"]
+  },
+  "standard.validate": [
+      "javascript",
+      { "language": "html", "autoFix": true }
+  ]
+}
