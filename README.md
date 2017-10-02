@@ -53,9 +53,7 @@ Routes should be specified as on object where each key is a route, and each valu
     },
 
     components: {
-      Router,
-      Home,
-      Contact
+      Router
     }
   
   }
