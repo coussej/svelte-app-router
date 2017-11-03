@@ -19,7 +19,7 @@ npm install --save svelte-app-router
 
 ## Usage:
 
-Routes should be specified as on object where each key is a route, and each value is an array containing a component as first element and optionally an data-object as second element.
+Routes should be specified as on object where each key is a route, and each value is an array containing a component as the first element and optionally an object with data for that component as the second element.
 
 ```html
 <!-- Links. These can be here or anywhere else in your app. -->
