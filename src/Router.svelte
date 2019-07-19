@@ -52,7 +52,7 @@
 
     activeComponent = new nextRoute[0]({
       target: getContainer(),
-      data: data
+      props: data
     })
     activePath = urlParts.path,
     notFound = false
