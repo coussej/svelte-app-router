@@ -5,7 +5,10 @@
   export let includeQueryParameters = true
   export let activePath =  ''
   export let activeComponent = {}
-  export let view
+
+  function getContainer() {
+    return document.querySelector('.svelte-app-router')
+  }
 
   function getURLParts() {
     const hashParts = (window.location.hash.slice(1) || '/').split('?')
@@ -48,7 +51,7 @@
     }
 
     activeComponent = new nextRoute[0]({
-      target: view,
+      target: getContainer(),
       data: data
     })
     activePath = urlParts.path,
@@ -56,14 +59,14 @@
   }
 
   onMount(() => {
-    if (view.childElementCount) return
+    if (getContainer().childElementCount) return
     route()
   })
 </script>
 
 <svelte:window on:hashchange={route} />
 
-<div bind:this={view} />
+<div class="svelte-app-router" />
 
 {#if notFound}
   <slot>
