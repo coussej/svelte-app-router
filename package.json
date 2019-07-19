@@ -2,7 +2,7 @@
   "name": "svelte-app-router",
   "version": "3.0.0",
   "description": "Simple SPA router made with Svelte.",
-  "main": "dist/svelte-app-router.js",
+  "main": "dist/bundle.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "example": "webpack-dev-server --content-base public"
