@@ -4,9 +4,8 @@
   "description": "Simple SPA router made with Svelte.",
   "main": "dist/svelte-app-router.js",
   "scripts": {
-    "build": "rollup -c",
-    "example": "rollup -c -i src/example/Example.html -o example/index.js -f iife -n Example && http-server example",
-    "prepublish": "npm run build"
+    "build": "cross-env NODE_ENV=production webpack",
+    "example": "webpack-dev-server --content-base public"
   },
   "repository": {
     "type": "git",
@@ -26,8 +25,25 @@
   },
   "homepage": "https://github.com/coussej/ssvelte-app-router#readme",
   "devDependencies": {
-    "rollup": "^0.50.0",
-    "rollup-plugin-svelte": "^3.1.0",
-    "standard": "^10.0.3"
+    "cross-env": "^5.2.0",
+    "css-loader": "^3.1.0",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-svelte3": "^2.6.0",
+    "file-loader": "^4.0.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "serve": "^11.0.0",
+    "style-loader": "^0.23.1",
+    "svelte-loader": "2.13.5",
+    "url-loader": "^2.0.1",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.3.1"
+  },
+  "dependencies": {
+    "svelte": "^3.6.7"
   }
 }
