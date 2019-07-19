@@ -29,7 +29,7 @@ Routes should be specified as on object where each key is a route, and each valu
 
 <!-- The Router component. Content between Router start and end tag will be 
      shown in case of navigation to a non-existing route.-->
-<Router routes="{{ routes }}">
+<Router routes={routes}>
   <div class="error">
     Houston, we have a problem! This page was not found.
   </div>
@@ -40,23 +40,12 @@ Routes should be specified as on object where each key is a route, and each valu
   import Home from './pages/Home.html'
   import Contact from './pages/Contact.html'
 
-  export default {
-
-    data () {
-      return {
-        routes: {
-          '/': [Home, {message: 'from "/" path'}],
-          '/home' [Home, {message: 'from "/home" path'}]
-          '/contact': [Contact]
-        }
-      }
-    },
-
-    components: {
-      Router
-    }
-  
+  export let routes: {
+    '/': [Home, {message: 'from "/" path'}],
+    '/home' [Home, {message: 'from "/home" path'}]
+    '/contact': [Contact]
   }
+
 </script>
 ```
 

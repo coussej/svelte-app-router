@@ -1,0 +1,29 @@
+<NotificationManager></NotificationManager>
+<Router routes="{{routes}}" redirectnotfound></Router>
+
+<script>
+  // import main style
+  import '../styles/main.sass'
+
+  // import components
+  import NotificationManager from './NotificationManager/NotificationManager.html'
+  import Login from './Login.html'
+  import Main from './Main.html'
+  import Router from './Router.html'
+
+  export default {
+    data () {
+      return {
+        routes: {
+          '/': [Login],
+          '/main': [Main]
+        },
+        username: window.sessionStorage.factryuser
+      }
+    },
+    components: {
+      NotificationManager,
+      Router
+    }
+  }
+</script>
