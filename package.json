@@ -1,8 +1,9 @@
 {
   "name": "svelte-app-router",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Simple SPA router made with Svelte.",
   "main": "dist/bundle.js",
+  "svelte": "src/index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "example": "webpack-dev-server --content-base public"
@@ -12,7 +13,8 @@
     "url": "git+https://github.com/coussej/svelte-app-router.git"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "keywords": [
     "svelte",
@@ -23,10 +25,11 @@
   "bugs": {
     "url": "https://github.com/coussej/svelte-app-router/issues"
   },
-  "homepage": "https://github.com/coussej/ssvelte-app-router#readme",
+  "homepage": "https://github.com/coussej/svelte-app-router#readme",
   "devDependencies": {
     "cross-env": "^5.2.0",
     "css-loader": "^3.1.0",
+    "eslint": "^6.4.0",
     "eslint-config-standard": "^13.0.1",
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-node": "^9.1.0",
@@ -37,13 +40,11 @@
     "mini-css-extract-plugin": "^0.8.0",
     "serve": "^11.0.0",
     "style-loader": "^0.23.1",
+    "svelte": "^3.12.1",
     "svelte-loader": "2.13.5",
     "url-loader": "^2.0.1",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.1"
-  },
-  "dependencies": {
-    "svelte": "^3.6.7"
   }
 }

@@ -13,7 +13,11 @@ module.exports = {
     bundle: prod ? ['./src/Router.svelte'] : ['./src/example/main.js']
   },
   resolve: {
-    extensions: ['.mjs', '.js', '.svelte']
+    extensions: ['.mjs', '.js', '.svelte'],
+    mainFields: ['svelte', 'browser', 'module', 'main'],
+    alias: {
+      svelte: path.resolve('node_modules', 'svelte')
+    }
   },
   output: {
     path: prod ? path.join(__dirname, '/dist') : path.join(__dirname, '/public'),
@@ -24,9 +28,6 @@ module.exports = {
   module: {
     rules: [{
       test: /\.svelte$/,
-      include: [
-        path.resolve(__dirname, 'src'),
-      ],
       use: {
         loader: 'svelte-loader',
         options: {
