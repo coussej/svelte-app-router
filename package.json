@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/coussej/svelte-app-router/issues"
   },
-  "homepage": "https://github.com/coussej/ssvelte-app-router#readme",
+  "homepage": "https://github.com/coussej/svelte-app-router#readme",
   "devDependencies": {
     "cross-env": "^5.2.0",
     "css-loader": "^3.1.0",
