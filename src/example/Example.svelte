@@ -4,8 +4,8 @@
   import Contact from './Contact.svelte'
 
   const routes = {
-    '/': [Home, {message: 'from "/" path'}],
-    '/home': [Home, {message: 'from "/home" path'}],
+    '/': [Home, { message: 'from "/" path' }],
+    '/home': [Home, { message: 'from "/home" path' }],
     '/contact': [Contact]
   }
 </script>

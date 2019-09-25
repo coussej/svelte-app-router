@@ -1,7 +1,7 @@
 import Example from './Example.svelte'
 
 const app = new Example({
-	target: document.body
+  target: document.body
 })
 
 window.app = app
