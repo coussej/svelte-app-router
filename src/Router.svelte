@@ -3,14 +3,14 @@
   export let routes = {}
   export let notFound = false
   export let includeQueryParameters = true
-  export let activePath =  ''
+  export let activePath = ''
   export let activeComponent = {}
 
-  function getContainer() {
+  function getContainer () {
     return document.querySelector('.svelte-app-router')
   }
 
-  function getURLParts() {
+  function getURLParts () {
     const hashParts = (window.location.hash.slice(1) || '/').split('?')
     const path = hashParts[0]
     let query = {}
@@ -44,7 +44,7 @@
     const data = nextRoute[1] || {}
     if (includeQueryParameters) {
       for (const key in urlParts.query) {
-        if (urlParts.query.hasOwnProperty(key)) {
+        if (Object.prototype.hasOwnProperty.call(urlParts.query, key)) {
           data[key] = urlParts.query[key]
         }
       }
@@ -54,7 +54,7 @@
       target: getContainer(),
       props: data
     })
-    activePath = urlParts.path,
+    activePath = urlParts.path
     notFound = false
   }
 
