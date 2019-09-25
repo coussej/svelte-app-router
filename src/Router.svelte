@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from 'svelte'
+  import { onMount, tick } from 'svelte'
   export let routes = {}
   export let notFound = false
   export let includeQueryParameters = true
@@ -25,7 +25,7 @@
     return { path, query }
   }
 
-  function route () {
+  async function route () {
     const urlParts = getURLParts()
     const nextRoute = routes[urlParts.path]
 
@@ -50,6 +50,7 @@
       }
     }
 
+    await tick()
     activeComponent = new nextRoute[0]({
       target: getContainer(),
       props: data
