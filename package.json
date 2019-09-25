@@ -1,6 +1,6 @@
 {
   "name": "svelte-app-router",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Simple SPA router made with Svelte.",
   "main": "dist/bundle.js",
   "svelte": "src/index.js",
