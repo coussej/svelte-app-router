@@ -25,12 +25,14 @@
     return { path, query }
   }
 
-  async function route () {
+  async function drawRoute () {
     const urlParts = getURLParts()
     const nextRoute = routes[urlParts.path]
 
-    // Destroy the current view
-    if (activeComponent.$destroy) activeComponent.$destroy()
+    // Destroy the current view if its' not the same view as before
+    if (activePath !== urlParts.path && activeComponent.$destroy) {
+      activeComponent.$destroy()
+    }
 
     // No matching route is found
     if (!nextRoute) {
@@ -51,21 +53,26 @@
     }
 
     await tick()
-    activeComponent = new nextRoute[0]({
-      target: getContainer(),
-      props: data
-    })
+    if (activePath !== urlParts.path) {
+      activeComponent = new nextRoute[0]({
+        target: getContainer(),
+        props: data
+      })
+    } else {
+      activeComponent.$set(data)
+    }
+
     activePath = urlParts.path
     notFound = false
   }
 
   onMount(() => {
     if (getContainer().childElementCount) return
-    route()
+    drawRoute()
   })
 </script>
 
-<svelte:window on:hashchange={route} />
+<svelte:window on:hashchange={drawRoute} />
 
 <div class="svelte-app-router" />
 
