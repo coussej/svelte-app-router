@@ -71,6 +71,6 @@
 
 {#if notFound}
   <slot>
-    <p class="fallback">Route {{ activePath }} not found</p>
+    <p class="fallback">Route not found</p>
   </slot>
 {/if}
