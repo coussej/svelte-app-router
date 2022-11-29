@@ -1,5 +1,5 @@
 <script>
-  import { onMount, tick } from 'svelte'
+  import { onDestroy, onMount, tick } from 'svelte'
   export let routes = {}
   export let notFound = false
   export let includeQueryParameters = true
@@ -69,6 +69,12 @@
   onMount(() => {
     if (getContainer().childElementCount) return
     drawRoute()
+  })
+
+  onDestroy(() => {
+    if (activeComponent.$destroy) {
+      activeComponent.$destroy()
+    }
   })
 </script>
 
