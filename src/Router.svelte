@@ -15,10 +15,19 @@
     const path = hashParts[0]
     let query = {}
     if (hashParts[1]) {
-      const parts = decodeURI(hashParts[1])
-        .replace(/"/g, '\\"')
-        .replace(/&/g, '","')
-        .replace(/=/g, '":"')
+      const replacements = [
+        // Remove these because they break our JSON.parse
+        [/\f/g, ''], [/\n/g, ''],
+        // Escape these because they break our JSON.parse
+        [/\//g, '\\/'], [/\t/g, '\\t'], [/\r/g, '\\r'],
+        // Transform these to make our querystring into JSON
+        [/"/g, '\\"'], [/&/g, '","'], [/=/g, '":"'],
+      ]
+      const parts = replacements
+        .reduce((acc, [pattern, replacement]) => {
+          return acc.replace(pattern, replacement)
+        }, decodeURI(hashParts[1]))
+
       query = JSON.parse(`{"${parts}"}`)
     }
 
